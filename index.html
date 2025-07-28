@@ -99,6 +99,18 @@
 <body>
 
   <h1>Questions du Permis de Conduire</h1>
+<h2>Nombre aléatoire entre 1 et 63 :</h2>
+<div id="randomNumber" style="font-size: 2em; margin-bottom: 10px;"->--</div>
+<button onclick="generateRandomNumber()">Générer un nombre</button>
+
+<script>
+function generateRandomNumber() {
+  const min = 1;
+  const max = 63;
+  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  document.getElementById('randomNumber').textContent = randomNumber;
+}
+</script>
 
   <div>
     <h3>Vérifications intérieures</h3>
