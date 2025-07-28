@@ -93,6 +93,11 @@
       font-size: 15px;
     }
   }
+
+  .highlight {
+  background-color: #ffeaa7 !important;
+  transition: background-color 0.5s ease;
+}
 </style>
 
 </head>
@@ -104,32 +109,42 @@
 <button onclick="generateRandomNumber()">Générer un nombre</button>
 
 <script>
-function generateRandomNumber() {
-  const min = 1;
-  const max = 63;
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  document.getElementById('randomNumber').textContent = randomNumber;
-}
+  function generateRandomNumber() {
+    const min = 1;
+    const max = 63;
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    document.getElementById('randomNumber').textContent = randomNumber;
+
+    const target = document.getElementById('q' + randomNumber);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      target.classList.add("highlight");
+      setTimeout(() => {
+        target.classList.remove("highlight");
+      }, 2000);
+    }
+  }
 </script>
+
 
   <div>
     <h3>Vérifications intérieures</h3>
 
-<p class="question">1. Quels sont les documents obligatoires à présenter en cas de contrôle par les forces de l'ordre ?</p>
+<p class="question" id="q1">1. Quels sont les documents obligatoires à présenter en cas de contrôle par les forces de l'ordre ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Le <u>certificat d'immatriculation</u> (ou carte grise), <u>attestation d'assurance</u> et le <u>permis de conduire</u>.
 </p>
 
-<p class="question">2. En cas d'accident, dans quel délai doit-il être transmis à l'assureur ?</p>
+<p class="question" id="q2">2. En cas d'accident, dans quel délai doit-il être transmis à l'assureur ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')"><b>5 jours</b></p>
 
-<p class="question">3. En cas d'accident, quels sont les accessoires obligatoires ?</p>
+<p class="question" id="q3">3. En cas d'accident, quels sont les accessoires obligatoires ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">Un <u>gilet de haute visibilité</u> et un <u>triangle de présignalisation</u>.</p>
 
-<p class="question">4. À partir de quel taux d'alcoolémie, en période probatoire, est-on en infraction ?</p>
+<p class="question" id="q4">4. À partir de quel taux d'alcoolémie, en période probatoire, est-on en infraction ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')"><b>0.2 g/L</b>, c’est-à-dire <u>zéro verre</u>.</p>
 
-<p class="question">5. Pourquoi est-il important de bien régler son volant ? Citez deux exemples.</p>
+<p class="question" id="q5">5. Pourquoi est-il important de bien régler son volant ? Citez deux exemples.</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Confort de conduite</li>
   <li>Accessibilité aux commandes</li>
@@ -137,129 +152,129 @@ function generateRandomNumber() {
   <li>Efficacité des airbags</li>
 </ul>
 
-<p class="question">6. Quelle est l'utilité de l'appui-tête ?</p>
+<p class="question" id="q6">6. Quelle est l'utilité de l'appui-tête ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Il permet de <b>retenir le mouvement</b> de la tête en cas de choc et <b>limiter les blessures</b>.
 </p>
 
-<p class="question">7. En règle générale, à partir de quel âge un enfant peut-il être installé sur le siège passager avant ?</p>
+<p class="question" id="q7">7. En règle générale, à partir de quel âge un enfant peut-il être installé sur le siège passager avant ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')"><b>10 ans</b></p>
 
-<p class="question">8. Peut-on fixer tous types de sièges enfant sur des attaches de type Isofix ?</p>
+<p class="question" id="q8">8. Peut-on fixer tous types de sièges enfant sur des attaches de type Isofix ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Non</b>, uniquement ceux compatibles avec ce type d’attache.
 </p>
 
-<p class="question">9. Dans quelle situation doit-on désactiver l'airbag passager avant ?</p>
+<p class="question" id="q9">9. Dans quelle situation doit-on désactiver l'airbag passager avant ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Lors du <b>transport d’un enfant</b> à l’avant dans un <u>siège auto dos à la route</u>.
 </p>
 
-<p class="question">10. Quel est le risque de maintenir les feux de route lors d’un croisement avec d’autres usagers ?</p>
+<p class="question" id="q10">10. Quel est le risque de maintenir les feux de route lors d’un croisement avec d’autres usagers ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Un risque d’<b>éblouissement</b> des autres usagers.
 </p>
 
-<p class="question">11. Quel est le risque de circuler avec un frein de parking mal desserré ?</p>
+<p class="question" id="q11">11. Quel est le risque de circuler avec un frein de parking mal desserré ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Une <b>dégradation</b> du système de freinage.
 </p>
 
-<p class="question">12. Quelles sont les conditions à respecter pour contrôler ou compléter le niveau d’huile ?</p>
+<p class="question" id="q12">12. Quelles sont les conditions à respecter pour contrôler ou compléter le niveau d’huile ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Moteur froid</li>
   <li>Véhicule à l’arrêt sur un terrain plat</li>
 </ul>
 
-<p class="question">13. Quelle est la conséquence d’une température trop élevée du liquide de refroidissement ?</p>
+<p class="question" id="q13">13. Quelle est la conséquence d’une température trop élevée du liquide de refroidissement ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Une <b>surchauffe</b> ou une <b>casse moteur</b>.
 </p>
 
-<p class="question">14. Qu’est-ce qui peut provoquer la décharge de la batterie moteur éteint ?</p>
+<p class="question" id="q14">14. Qu’est-ce qui peut provoquer la décharge de la batterie moteur éteint ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Des <u>feux</u> ou <u>accessoires électriques</u> laissés allumés.
 </p>
 
-<p class="question">15. Quelle précaution dois-je prendre pour que les enfants installés à l’arrière ne puissent pas ouvrir leur portière ?</p>
+<p class="question" id="q15">15. Quelle précaution dois-je prendre pour que les enfants installés à l’arrière ne puissent pas ouvrir leur portière ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Activer la <u>sécurité enfant</u> sur les deux portières arrière.
 </p>
 
-<p class="question">16. Quelles sont les précautions à prendre lors du remplissage du réservoir ?</p>
+<p class="question" id="q16">16. Quelles sont les précautions à prendre lors du remplissage du réservoir ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Arrêter le moteur</li>
   <li>Ne pas fumer</li>
   <li>Ne pas téléphoner</li>
 </ul>
 
-<p class="question">17. À quelle fréquence est-il recommandé de vérifier la pression des pneumatiques ?</p>
+<p class="question" id="q17">17. À quelle fréquence est-il recommandé de vérifier la pression des pneumatiques ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')"><b>Tous les mois</b></p>
 
-<p class="question">18. Quelle est la différence entre un voyant orange et un voyant rouge ?</p>
+<p class="question" id="q18">18. Quelle est la différence entre un voyant orange et un voyant rouge ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li><b>Rouge :</b> une <u>anomalie</u> ou un <u>danger</u>.</li>
   <li><b>Orange :</b> un <u>élément important</u>, mais pas urgent.</li>
 </ul>
 
-<p class="question">19. Peut-on utiliser les feux de brouillard arrière par forte pluie ?</p>
+<p class="question" id="q19">19. Peut-on utiliser les feux de brouillard arrière par forte pluie ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')"><b>Non</b></p>
 
-<p class="question">20. Quelle peut être la conséquence d’une panne de dégivrage de la lunette arrière ?</p>
+<p class="question" id="q20">20. Quelle peut être la conséquence d’une panne de dégivrage de la lunette arrière ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Une <b>mauvaise visibilité</b> vers l’arrière.
 </p>
 
-<p class="question">21. Quand utilise-t-on les feux de détresse ?</p>
+<p class="question" id="q21">21. Quand utilise-t-on les feux de détresse ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Panne</li>
   <li>Accident</li>
   <li>Ralentissement important</li>
 </ul>
 
-<p class="question">22. Dans quel cas peut-on utiliser l’avertisseur sonore en agglomération ?</p>
+<p class="question" id="q22">22. Dans quel cas peut-on utiliser l’avertisseur sonore en agglomération ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   En cas de <b>danger immédiat</b>.
 </p>
 
-<p class="question">23. Pourquoi doit-on régler la hauteur des feux ?</p>
+<p class="question" id="q23">23. Pourquoi doit-on régler la hauteur des feux ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Pour éviter d’<b>éblouir</b> les autres usagers.
 </p>
 
-<p class="question">24. Comment détecter l’usure des essuie-glaces en circulation ?</p>
+<p class="question" id="24">24. Comment détecter l’usure des essuie-glaces en circulation ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   S’ils <b>laissent des traces</b> ou ne nettoient plus correctement le pare-brise.
 </p>
 
-<p class="question">25. Par temps de pluie, quelle commande complémentaire pouvez-vous actionner pour une bonne visibilité arrière ?</p>
+<p class="question" id="q25">25. Par temps de pluie, quelle commande complémentaire pouvez-vous actionner pour une bonne visibilité arrière ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   La commande de <b>désembuage</b> arrière.
 </p>
 
-<p class="question">26. Citez deux éléments complémentaires pour un désembuage efficace vers le pare-brise :</p>
+<p class="question" id="26">26. Citez deux éléments complémentaires pour un désembuage efficace vers le pare-brise :</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Commande de <b>vitesse de ventilation</b></li>
   <li>Commande d’<b>air chaud</b></li>
   <li><b>Climatisation</b></li>
 </ul>
 
-<p class="question">27. Quel est le risque de maintenir le recyclage de l’air de manière prolongée ?</p>
+<p class="question" id="q27">27. Quel est le risque de maintenir le recyclage de l’air de manière prolongée ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Apparition de <u>buée</u> et <b>mauvaise visibilité</b>.
 </p>
 
-<p class="question">28. Sans actionner la commande de régulateur, comment le désactiver rapidement ?</p>
+<p class="question" id="q28">28. Sans actionner la commande de régulateur, comment le désactiver rapidement ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   En appuyant sur la pédale de <b>frein</b> ou d’<b>embrayage</b>.
 </p>
 
-<p class="question">29. Quelle est l’utilité d’un limiteur de vitesse ?</p>
+<p class="question" id="q29">29. Quelle est l’utilité d’un limiteur de vitesse ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Ne pas <u>dépasser</u> la vitesse programmée par le conducteur.
 </p>
 
-<p class="question">30. Quel est l’intérêt de la position « nuit » du rétroviseur ?</p>
+<p class="question" id="q30">30. Quel est l’intérêt de la position « nuit » du rétroviseur ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Ne pas être <b>ébloui</b> par les phares du véhicule suiveur.
 </p>
@@ -268,180 +283,177 @@ function generateRandomNumber() {
 <div>
     <h3>Vérifications extérieures</h3>
 
-<p class="question">31. En roulant, quel est le risque d’une mauvaise fermeture du capot ?</p>
+<p class="question" id="q31">31. En roulant, quel est le risque d’une mauvaise fermeture du capot ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Risque d’<b>ouverture</b> pouvant entraîner un <u>accident</u>.
 </p>
 
-<p class="question">32. Pour un capot s’ouvrant depuis l’avant, quelle est l’utilité du dispositif de sécurité ?</p>
+<p class="question" id="q32">32. Pour un capot s’ouvrant depuis l’avant, quelle est l’utilité du dispositif de sécurité ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Empêcher l’<b>ouverture</b> du capot en circulation en cas de mauvais verrouillage.
 </p>
 
-<p class="question">33. Quelle est la conséquence d’un niveau insuffisant de liquide de frein ?</p>
+<p class="question" id="q33">33. Quelle est la conséquence d’un niveau insuffisant de liquide de frein ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Un <b>affaiblissement</b> de l’efficacité du <u>freinage</u>.
 </p>
 
-<p class="question">34. Quel est le danger si l’on complète le liquide de frein quand le moteur est chaud ?</p>
+<p class="question" id="q34">34. Quel est le danger si l’on complète le liquide de frein quand le moteur est chaud ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Risque de <b>brûlure</b> par projection de liquide chaud.
 </p>
 
-<p class="question">35. Quel est le principal risque d’un manque d’huile moteur ?</p>
+<p class="question" id="q35">35. Quel est le principal risque d’un manque d’huile moteur ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Risque de <b>détérioration</b> ou <b>casse moteur</b> par <u>surchauffe</u>.
 </p>
 
-<p class="question">36. Quel est le risque d’un manque d’huile moteur ?</p>
+<p class="question" id="q36">36. Quel est le risque d’un manque d’huile moteur ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Risque de <b>détérioration</b> ou <b>casse moteur</b> par <u>surchauffe</u>.
 </p>
 
-<p class="question">37. Pourquoi utiliser un liquide lave-glace spécial hiver ?</p>
+<p class="question" id="q37">37. Pourquoi utiliser un liquide lave-glace spécial hiver ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Pour éviter le <b>gel</b> du liquide.
 </p>
 
-<p class="question">38. Risque d’absence de liquide lave-glace ?</p>
+<p class="question" id="q38">38. Risque d’absence de liquide lave-glace ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Mauvaise visibilité</b> à cause des salissures ou insectes.
 </p>
 
-<p class="question">39. Solution pour démarrer avec une batterie à plat sans déplacer le véhicule ?</p>
+<p class="question" id="q39">39. Solution pour démarrer avec une batterie à plat sans déplacer le véhicule ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Brancher une <b>deuxième batterie</b> en parallèle ou <b>remplacer la batterie</b>.
 </p>
 
-<p class="question">40. Conséquences d’une panne de feu de croisement ?</p>
+<p class="question" id="q40">40. Conséquences d’une panne de feu de croisement ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Mauvaise visibilité</b> et risque d’être <b>confondu</b> avec un deux-roues.
 </p>
 
-<p class="question">41. Où trouver les pressions préconisées pour les pneumatiques ?</p>
+<p class="question" id="q41">41. Où trouver les pressions préconisées pour les pneumatiques ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Sur une plaque dans une portière</li>
   <li>Dans la notice d’utilisation</li>
   <li>Au niveau de la trappe à carburant</li>
 </ul>
 
-<p class="question">42. Qu’est-ce que l’aquaplanage et sa conséquence ?</p>
+<p class="question" id="q42">42. Qu’est-ce que l’aquaplanage et sa conséquence ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Film d’eau entre pneu et chaussée ➜ <b>perte de contrôle</b>.
 </p>
 
-<p class="question">43. Fréquence de vérification de la pression des pneus ?</p>
+<p class="question" id="q43">43. Fréquence de vérification de la pression des pneus ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Tous les mois</b> et avant un long trajet.
 </p>
 
-<p class="question">44. Quand utiliser les feux de détresse ?</p>
+<p class="question" id="q44">44. Quand utiliser les feux de détresse ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   En cas de <b>panne</b>, <b>accident</b>, ou <b>ralentissement important</b>.
 </p>
 
-<p class="question">45. Signification d’un clignotement plus rapide ?</p>
+<p class="question" id="q45">45. Signification d’un clignotement plus rapide ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Défaut</b> de fonctionnement d’une ampoule de clignotant.
 </p>
 
-<p class="question">46. Distance de visibilité des feux de position par temps clair ?</p>
+<p class="question" id="q46">46. Distance de visibilité des feux de position par temps clair ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>150 mètres</b> minimum.
 </p>
 
-<p class="question">47. Utilité des feux diurnes ?</p>
+<p class="question" id="q47">47. Utilité des feux diurnes ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Être <b>vu</b> en journée par les autres usagers.
 </p>
 
-<p class="question">48. Conséquence d’un mauvais réglage des feux ?</p>
+<p class="question" id="q48">48. Conséquence d’un mauvais réglage des feux ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Éblouissement</b> ou <b>mauvaise visibilité</b>.
 </p>
 
-<p class="question">49. Cas d’utilisation d’un appel lumineux ?</p>
+<p class="question" id="q49">49. Cas d’utilisation d’un appel lumineux ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Avertir de son approche</li>
   <li>En cas de danger</li>
   <li>À la place de l’avertisseur sonore</li>
 </ul>
 
-<p class="question">50. Conséquence d’une panne des feux de stop ?</p>
+<p class="question" id="q50">50. Conséquence d’une panne des feux de stop ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Manque d’information</b> ➜ risque de <b>collision</b>.
 </p>
 
-<p class="question">51. Quand utiliser les feux de brouillard arrière ?</p>
+<p class="question" id="q51">51. Quand utiliser les feux de brouillard arrière ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   En cas de <b>brouillard</b> ou de <b>neige</b>.
 </p>
 
-<p class="question">52. Deux utilités des feux de recul ?</p>
+<p class="question" id="q52">52. Deux utilités des feux de recul ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Éclairer</b> la zone la nuit et <b>avertir</b> les autres usagers.
 </p>
 
-<p class="question">53. Utilité des dispositifs réfléchissants ?</p>
+<p class="question" id="q53">53. Utilité des dispositifs réfléchissants ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Rendre le véhicule <b>visible</b> la nuit ou par faible visibilité.
 </p>
 
-<p class="question">54. Conséquence d’une panne de feu de position arrière ?</p>
+<p class="question" id="q54">54. Conséquence d’une panne de feu de position arrière ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   Être <b>mal vu</b> ➜ risque de <b>collision</b>.
 </p>
 
-<p class="question">55. Défaut d’éclairage de la plaque = contre-visite ?</p>
+<p class="question" id="q55">55. Défaut d’éclairage de la plaque = contre-visite ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Oui</b>, la plaque doit être <b>éclairée</b>.
 </p>
 
-<p class="question">56. Précautions lors de l’installation d’un porte-vélos ?</p>
+<p class="question" id="q56">56. Précautions lors de l’installation d’un porte-vélos ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   La <b>plaque</b> et les <b>feux</b> doivent être visibles et fonctionnels.
 </p>
 
-<p class="question">57. Conséquence d’un lave-glace défaillant ?</p>
+<p class="question" id="q57">57. Conséquence d’un lave-glace défaillant ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Mauvaise visibilité</b> (pare-brise sale).
 </p>
 
-<p class="question">58. Risque de balais d’essuie-glace défectueux ?</p>
+<p class="question" id="q58">58. Risque de balais d’essuie-glace défectueux ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Mauvaise visibilité</b> en cas d’intempéries.
 </p>
 
-<p class="question">59. Précautions lors du remplissage du réservoir (carburant) ?</p>
+<p class="question" id="q59">59. Précautions lors du remplissage du réservoir (carburant) ?</p>
 <ul class="blurred" onclick="this.classList.toggle('revealed')">
   <li>Arrêter le moteur</li>
   <li>Ne pas fumer</li>
   <li>Ne pas utiliser de téléphone</li>
 </ul>
 
-<p class="question">60. Que faire si on transporte du poids dans le coffre ?</p>
+<p class="question" id="q60">60. Que faire si on transporte du poids dans le coffre ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Augmenter la pression</b> des pneus et <b>baisser les feux</b> avant.
 </p>
 
-<p class="question">61. Risques d’objets sur la plage arrière ?</p>
+<p class="question" id="q61">61. Risques d’objets sur la plage arrière ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Mauvaise visibilité</b> et <b>risque de projection</b> en cas de choc.
 </p>
 
-<p class="question">62. Utilise-t-on le triangle de présignalisation sur autoroute ?</p>
+<p class="question" id="q62">62. Utilise-t-on le triangle de présignalisation sur autoroute ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Non</b>, son usage est interdit sur autoroute.
 </p>
 
-<p class="question">63. Si la sécurité enfant est enclenchée, peut-on ouvrir la portière arrière depuis l’extérieur ?</p>
+<p class="question" id="q63">63. Si la sécurité enfant est enclenchée, peut-on ouvrir la portière arrière depuis l’extérieur ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Oui</b>
 </p>
 </div>
-
-
-
 
 
   <div class="footer">
