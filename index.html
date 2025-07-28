@@ -110,14 +110,14 @@
 <body>
 
   <h1>Questions du Permis de Conduire</h1>
-<h2>Nombre aléatoire entre 1 et 63 :</h2>
+<h2>Question aléatoire :</h2>
 <div id="randomNumber" style="font-size: 2em; margin-bottom: 10px;"->--</div>
 <button onclick="generateRandomNumber()">Générer un nombre</button>
 
 <script>
   function generateRandomNumber() {
     const min = 1;
-    const max = 63;
+    const max = 98;
     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
     document.getElementById('randomNumber').textContent = randomNumber;
 
@@ -458,6 +458,200 @@
 <p class="question" id="q63">63. Si la sécurité enfant est enclenchée, peut-on ouvrir la portière arrière depuis l’extérieur ?</p>
 <p class="blurred" onclick="this.classList.toggle('revealed')">
   <b>Oui</b>
+</p>
+
+    <h3>Premiers secours</h3>
+
+<p class="question" id="q64">64. En cas de panne ou d'accident, quel équipement de sécurité doit-être porté avant de quitter le véhicule ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Il faut porter le <b>gilet de haute visibilité</b> avant de sortir du véhicule.
+</p>
+
+<p class="question" id="q65">65. En général (hors autoroute ou endroit dangereux), en cas de panne ou d'accident, où doit-être placé le triangle de présignalisation ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Il doit être placé à une distance d'environ <b>30 mètres</b> de la panne ou de l'accident ou avant un virage ou sommet de côté.
+</p>
+
+<p class="question" id="q66">66. Comment et pourquoi protéger une zone de danger en cas d'accident de la route ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  En <b>délémitant</b> clairement et <u>largement</u> la zone de danger visible pour protéger les victimes et <u>éviter un sur-accident</u>
+</p>
+
+<p class="question" id="q67">67. Dans quelle situation peut-on déplacer une victime ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  En présence d'un <b>danger réel, immédiat et non contrôlable</b>. Ce déplacement doit rester exceptionnel.
+</p>
+
+<p class="question" id="q68">68. Quelles sont les conditions pour réaliser le dégagement d'urgence d'une victime en présence d'un danger réal, immédiat et non contrôlable ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  La victime doit être <b>visible, facile à atteindre</b> et <b>rien ne doit gêner</b> son dégagement. Il faut être sûr de pouvoir réaliser le dégagement de la victime.</p>
+
+<p class="question" id="q69">69. Si un dégagement d'urgence de la victime est nécessaire, où doit-elle être placée ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Dans un endroit suffisamment <b>éloigné</b> du danger et de ses <b>conséquences</b>.
+</p>
+
+<p class="question" id="q70">70. Citez les trois manières d'évaluer l'état de conscience d'une victime</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li>Lui poser des <u>questions simples</u> ("comment ça va?, "vous m'entendez?")</li>
+  <li>Lui <u>secouer doucement</u> les épaules</li>
+  <li>Lui <u>prendre la main</u> en lui demandant d'<u>éxécuter un geste simple</u>("serez-moi la main")</li>
+</ul>
+
+<p class="question" id="q71">71. Comment vérifier la respiration d'une victime ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  en regardant si le <b>ventre</b> et la <b>poitrine</b> se <u>soulèvent</u> et sentir de l'air à l'<u>expiration</u>
+</p>
+
+<p class="question" id="q72">72. Quels comportements adopter en présence d'une victime qui ne répond pas et ne réagit pas, mais respire ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li>La placer en <u>position stable</u>sur le côté ou en <u>P.L.S.</u> (Position Latérale de Sécurité)</li>
+  <li><u>Alerter</u> les secours</li>
+  <li>Surveiller la <u>respiration</u> de la victime jusqu'à l'arrivée des secours</li>
+</ul>
+
+<p class="question" id="q73">73. Quel comportement doit-on adopter en présence d'une victime en arrêt cardiaque ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li><b>ALERTER:</b> alerter immédiatement les secours</li>
+  <li><b>MASSER:</b> pratiquer une réanimation cardio-pulmonaire</li>
+  <li><b>DÉFIBRILLER:</b> utiliser un défibrillateur automatique (DAE) si possible</li>
+</ul>
+
+<p class="question" id="q74">74. Pourquoi l'alerte auprès des services de secours doit-elle être rapide et précise ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Pour permettre aux secours d'intervenir <b>rapidement</b> et de <b>apporter les moyens adaptés</b> aux victimes.
+</p>
+
+<p class="question" id="q75">75. Par quels moyens doit-être réalisée l'alerte des secours ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li>Un <b>téléphone portable</b> ou à défaut un téléphone fixe</li>
+  <li>Une <b>borne d'urgence</b></li>
+</ul>
+
+<p class="question" id="q76">76. Quels sont les numéros d'urgence à composer ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li><b>18:</b> Les sapeurs-pompiers</li>
+  <li><b>15:</b> SAMU</li>
+  <li><b>117:</b>Réservé aux appels d'urgence et valide dans l'ensemble de l'Union Européenne</li>
+</ul>
+
+<p class="question" id="q77">77. Quelles sont les trois informations à transmettre aux services de secours ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li>Le <b>numéro de téléphone</b> à partir duquel l'appel est émis</li>
+  <li>La <b>nature</b> du problème</li>
+  <li>La <b>localisation</b> la plus précise du problème</li>
+</ul>
+
+<p class="question" id="q78">78. Sur autoroute, comment indiquer avec précision les lieux de l'accident depuis un téléphone portable ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  En indiquant le <b>numéro de l'autoroute</b>, le <b>sens de circulation</b> et le <b>point kilomètrique</b> où se situe l'accident.
+</p>
+
+<p class="question" id="q79">79. A quel moment pouvez-vous mettre fin à un appel avec les secours ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Uniquement lorsque les secours nous invite à le faire.
+</p>
+
+<p class="question" id="q80">80. Lors d'un appel avec les services de secours, pourquoi devez-vous attendre que votre correspondant vous autorise à raccrocher ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Car il peut vous donner des <b>consignes de sécurité</b> ou des <b>informations importantes</b> à suivre en attendant l'arrivée des secours.
+</p>
+
+<p class="question" id="q81">81. Comment est diffusée l'alerte émise par le Signal d'Alerte et d'Information aux Populations (SAIP) ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Grâce aux <b>sirènes</b> ou aux <b>médias</b> tels que Radio France et France Télévisions.
+</p>
+
+<p class="question" id="q82">82. Quel est l'objectif du Signal d'Alerte et d'Information des Populations (SAIP) ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  <b>Avertir</b> la population d'un <u>danger imminent</u> ou qu'un <u>évènement grave</u> est en train de se produire.
+</p>
+
+<p class="question" id="q83">83. Comment est composé le signal d'alerte du Système d'Alerte et d'Information des Populations (SAIP)?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  Il se compose de 2 codes distincts:
+  <li>Le<b> Signal National d'Alerte (SNA):</b> variation du signal sur trois cycles successifs</li>
+  <li>le <b>signal de fin d'alerte:</b> signal continu</li>
+</ul>
+
+<p class="question" id="q84">84. Quels comportements adopter en cas de diffusion du signal d'alerte du Système d'Alerte et d'Information des Populations (SAIP) ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  <li>Se mettre en <u>sécurité</u></li>
+  <li><u>S'informer</u> grâce aux médias et sites internet des autorités, dès que leur consultation est possible</li>
+  <li><u>Respecter</u> les consignes des autorités</li>
+</ul>
+
+<p class="question" id="q85">85. Qu'est ce qu'une perte de connaissance ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  C'est lorsque la victime ne <b>réponds pas</b> et ne <b>réagit pas</b>, mais respire
+</p>
+
+<p class="question" id="q86">86. Quels sont les risques pour une personne en perte de connaissance qui est allongée sur le dos ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  L'arrêt <b>respiratoire</b> et l'arrêt <b>cardiaque</b>
+</p>
+
+<p class="question" id="q87">87. Pourquoi ne faut-il pas laisser une personne en perte de connaissance allongée sur le dos ?</p>
+<ul class="blurred" onclick="this.classList.toggle('revealed')">
+  Car elle risque un <b>étouffement</b> par:
+  <li>Des liquides présents dans la gorge</li>
+  <li>La chute de la langue en arrière</li>
+</ul>
+
+<p class="question" id="q88">88. Dans quel cas peut-on positionner une victime en P.L.S. ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Si la victime ne <b>répond pas</b>, ne <b>réagit pas</b> et <b>respire</b>
+</p>
+
+<p class="question" id="q89">89. Qu'est ce qu'une hémorragie ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  C'est une <b>perte de sang</b> prolongée, qui ne <b>s'arrête pas</b>. Elle imbibe de sang un mouchoir en quelques secondes.
+</p>
+
+
+<p class="question" id="q90">90. Quels sont les risques pour une personne victime d'une hémorragie ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Entraîner pour la victime une <b>détresse circulatoire</b> ou un <b>arrêt cardiaque</b>
+</p>
+
+<p class="question" id="q91">91. Comment arrêter une hémorragie ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  En appuyant fortement sur l'endroit qui saigne avec les doigts ou avec la paume de la main en mettant un tissu propre sur la plaie. 
+</p>
+
+<p class="question" id="q92">92. Qu'est-ce-qu'un arrêt cardiaque ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Le coeur ne fonctionne plus ou fonctionne d'une façon anarchique
+</p>
+
+<p class="question" id="q93">93. Quels sont les signes d'un arrêt cardiaque ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  La victime ne <b>répond pas</b>, ne <b>réagit pas</b> et ne <b>respire pas</b> ou présente une <b>respiration anormale</b>
+</p>
+
+<p class="question" id="q94">94. Quel est le risque principal d'un arrêt cardiaque sans intervention des secours ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  La <u>mort</u> de la victime qui survient en quelques minutes
+</p>
+
+<p class="question" id="q95">95. Pourquoi faut-il pratiquer immédiatement une réanimation cardio-pulmonaire sur une victime en arrêt cardiaque ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  Car les lésions du cerveau (consécutives au manque d'oxygène) surviennent dès les premières minutes
+</p>
+
+<p class="question" id="q96">96. Qu'est-ce qu'un défibrillateur automatisé externe DAE ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  C'est un appareil qui peut permettre de rétablir une activité cardiaque normale à une victime en arrêt cardiaque
+</p>
+
+<p class="question" id="q97">97. L'utilisation d'un Défibrillateur Automatisé DAE sur une victime qui n'est pa en arrêt cardique présente t-elle un risque ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  <b>Non</b> car le défibrillateur est automatisé et se déclenche uniquement quand la victime est en arrêt cardiaque
+</p>
+
+<p class="question" id="q98">98. A partir de quel âge peut-on suivre une formation aux premiers secours ?</p>
+<p class="blurred" onclick="this.classList.toggle('revealed')">
+  <b>10 ans</b>
 </p>
 
 <button onclick="scrollToTop()" style="
